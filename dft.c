@@ -102,9 +102,6 @@ int DFT(int idft, double *xr, double *xi, double *Xr_o, double *Xi_o, int N)
 // idft: 1 direct DFT, -1 inverse IDFT (Inverse DFT)
 int parallelDFT(int idft, double *xr, double *xi, double *Xr_o, double *Xi_o, int N)
 {
-        
-        printf("Number of threads: %d", omp_get_num_threads());
-
         #pragma omp parallel for
         for (int k = 0; k < N; k++)
         {
